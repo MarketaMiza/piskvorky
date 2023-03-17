@@ -1,0 +1,91 @@
+body {
+    background-image: linear-gradient(
+        to bottom,
+        #615dad, #ffc8da
+        );
+    /* min-height: 100vh;  */
+}
+
+/* 1rem automaticke zvetsovani a zmensovani   */
+.container {
+
+    position: relative;
+    top: 2.5rem;
+
+    width: 37rem;
+    
+
+    margin: 0 auto;
+    
+    background: #283e50;
+    border-radius: 0.35rem;   
+
+    color: #ffffff;
+}
+
+.content {
+    margin: 1rem;
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+/* responzive resim s clamp(min dovolena size, velikost jako potrebuji, max dovolena velikost)*/
+.title {   
+    font-size: clamp(1.75rem, 8vw, 2.5rem);
+    padding: 0.5rem;
+    line-height: 1;
+    font-family: 'Lobster', sans-serif;
+}
+
+.text {
+    padding: 0.5rem;
+    font-size: 1rem;
+    /* font-family: 'Rajdhani', sans-serif; */
+    
+    margin: 1rem 0 0;
+    /* text-shadow: 1px 1px 0 black; */
+}
+
+
+
+/*  */
+
+.links {
+    display: flex;
+    flex-direction: column;
+    color: #ffffff;
+}
+
+
+.links a {
+
+    min-width: 20px;
+    color: white;
+  
+    
+}
+
+.links a {
+    line-height: 4;
+    text-align: center;
+    text-decoration: none;
+} 
+
+
+
+ .green {   
+    background-color: #1fcca4;
+ }
+
+ .green:hover {
+    background-color: #1cbb96;
+ }
+
+ .blue {
+    background-color: #0197f6;
+ }
+
+ .blue:hover {
+    background-color: #0090e9;
+
+ }
