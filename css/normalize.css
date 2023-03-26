@@ -1,7 +1,6 @@
 /* normalize CSS */
 /* základní nastavení */
 
-
 /* box-sizing  vypocet celkove sirky a vysky prvku, zahrnuje padding a border */
 /* text-rendering  optimalizace písma při vykreslení */
 /* font-kerning úprava mezer mezi určitými dvojicemi písmen */
@@ -9,35 +8,55 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
-    text-rendering: optimizeLegibility;
-    font-kerning: auto;
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  font-kerning: auto;
 }
 
 html {
-    font-size: 100%;
-    -webkit-text-size-adjust: 100%;
-    --scroll-behavior: smooth;
-    scroll-behavior: smooth;
-    scroll-padding-top: 10rem;
+  font-size: 100%;
+  -webkit-text-size-adjust: 100%;
+  --scroll-behavior: smooth;
+  scroll-behavior: smooth;
+  scroll-padding-top: 10rem;
 }
 
 body {
-    color: #fff;
-    background: #000;
-    margin: 0; 
-    overflow: hidden;
-    overflow-y: auto;
+  color: #fff;
+  background: #000;
+  margin: 0;
+  overflow: hidden;
+  overflow-y: auto;
 }
 
+/* spolecny element pro index.html a hra.html */
+/* responzive resim s clamp(min dovolena size, velikost jako potrebuji, max dovolena velikost)*/
+
+/* 1rem automaticke zvetsovani a zmensovani   */
 body {
-    background-image: linear-gradient(
+  background-image: linear-gradient(
     to bottom,
     rgb(97, 93, 173),
     rgb(255, 200, 218)
   );
-    min-height: 100vh;
+  min-height: 100vh;
 }
 
+.container {
+  width: 360px;
+  height: 613px;
+  margin: 60px auto 0 auto;
+  background: #283e50;
+  color: #ffffff;
+  border-radius: 0.35rem 0.35rem 0 0;
+  font-size: 0.9rem;
+  text-align: center;
+  font-family: sans-serif;
+  font-weight: 100;
+}
 
-
+.title {
+  font-size: clamp(2rem, 10vw, 3rem);
+  font-family: "Lobster", sans-serif;
+  margin: 30px 0;
+}

@@ -1,32 +1,11 @@
-body {
+/* body {
   background-image: linear-gradient(
     to bottom,
     rgb(97, 93, 173),
     rgb(255, 200, 218)
   );
   min-height: 100vh;
-}
-
-/* 1rem automaticke zvetsovani a zmensovani   */
-.container {
-  width: 360px;
-  height: 613px;
-  margin: 60px auto 0 auto;
-  background: #283e50;
-  color: #ffffff;
-  border-radius: 0.35rem 0.35rem 0 0;
-  font-size: 0.9rem;
-  text-align: center;
-  font-family: sans-serif; 
-  font-weight: 100;
-}
-
-/* responzive resim s clamp(min dovolena size, velikost jako potrebuji, max dovolena velikost)*/
-.title {
-  font-size: clamp(2rem, 10vw, 3rem);
-  font-family: "Lobster", sans-serif;
-  margin: 30px 0;
-}
+} */
 
 .text {
   line-height: 1.5rem;
