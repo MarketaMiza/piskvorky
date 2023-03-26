@@ -1,3 +1,50 @@
-body {
+.container {
     max-width: 80vmin;
+    text-align: center;
+    margin: auto;
+    /* SMAZAT jenom abych videla jaky to ma box... SMAZAT */
+    border: 2px solid black;
+} 
+
+.description {
+    display: flex;
+    justify-content: space-between;
+    align-items: first baseline;
+
+    /* SMAZAT jenom abych videla jaky to ma box... SMAZAT */
+    border: 2px solid red;
+}
+
+figure {
+    margin: 0
+}
+
+table {
+
+    /* SMAZAT jenom abych videla jaky to ma box... SMAZAT */
+    border: 2px solid blue;
+
+}
+
+table, td {
+    border-spacing: 0;
+    border: 1px solid green;
+}
+
+td {
+    padding:0;
+}
+
+button {
+    text-decoration: none;
+    width: 32px;
+    height: 32px;
+    margin: 0;
+    padding: 0;
+    border: 0px solid black;
+    /* border-width: .1px; */
+    /* border-color: black; */
+    /* border-style: solid; */
+    border-radius: 0;
+
 }

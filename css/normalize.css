@@ -29,8 +29,12 @@ body {
   overflow-y: auto;
 }
 
-/* spolecny element pro index.html a hra.html */
+/* spolecne nastaveni pro index.html a hra.html */
 /* responzive resim s clamp(min dovolena size, velikost jako potrebuji, max dovolena velikost)*/
+
+/* body {
+    max-width: 80vmin;
+}  */
 
 /* 1rem automaticke zvetsovani a zmensovani   */
 body {
@@ -40,19 +44,6 @@ body {
     rgb(255, 200, 218)
   );
   min-height: 100vh;
-}
-
-.container {
-  width: 360px;
-  height: 613px;
-  margin: 60px auto 0 auto;
-  background: #283e50;
-  color: #ffffff;
-  border-radius: 0.35rem 0.35rem 0 0;
-  font-size: 0.9rem;
-  text-align: center;
-  font-family: sans-serif;
-  font-weight: 100;
 }
 
 .title {
