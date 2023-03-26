@@ -32,10 +32,6 @@ body {
 /* spolecne nastaveni pro index.html a hra.html */
 /* responzive resim s clamp(min dovolena size, velikost jako potrebuji, max dovolena velikost)*/
 
-/* body {
-    max-width: 80vmin;
-}  */
-
 /* 1rem automaticke zvetsovani a zmensovani   */
 body {
   background-image: linear-gradient(
