@@ -30,16 +30,10 @@ body {
 }
 
 /* spolecne nastaveni pro index.html a hra.html */
-/* responzive resim s clamp(min dovolena size, velikost jako potrebuji, max dovolena velikost)*/
-
-/* 1rem automaticke zvetsovani a zmensovani   */
+/* responzive resim s clamp(min dovolena size, velikost jako potrebuji, max dovolena velikost) */
 body {
-  background-image: linear-gradient(
-    to bottom,
-    rgb(97, 93, 173),
-    rgb(255, 200, 218)
-  );
   min-height: 100vh;
+  background-image: linear-gradient(rgb(97, 93, 173), rgb(255, 200, 218));
 }
 
 .title {
