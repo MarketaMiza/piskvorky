@@ -1,7 +1,7 @@
 # piskvorky
 domaci ukol
 
-# Proč mám ve svém projektu více CSS.
+# Proč mám ve svém projektu více CSS souborů
 V projektu je jedna hlavní stránka `index.html` a jedna podstránka `hra.html`.
 Pro každou z nich používám individuální CSS soubor. Je to pro mne přehledné, dochází k menší chybovosti, upravuji CSS pro každou ze stránek zvlášť.
 Ale jako první si vždy u projektu nastavím hlavní nastavení stránky - v tomto případě má název `normalize.css`.
