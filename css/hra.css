@@ -14,7 +14,7 @@
   margin: 10px 0;
 }
 
-.player {
+.header {
   display: flex;
   align-items: baseline;
 }
@@ -49,7 +49,6 @@ h2 {
 .green,
 .blue {
   border-radius: 10%;
- 
 }
 
 .green {
@@ -105,11 +104,10 @@ td:focus {
   background-color: rgba(255, 255, 255, 0.5);
 }
 
-
+/* zadani c.3 */
 .board__field--circle {
   background-image: url('../svg/circle.svg');
 }
-
 
 .board__field--cross {
   background-image: url('../svg/cross.svg');
@@ -119,12 +117,21 @@ td:focus {
 .board__field--cross {
   background-size: cover;
   width: 50%;
-  height: 50%;
-  animation: zoom 0.35s linear;
-
+  height: 50%; 
+  animation: zoom 0.15s;
 }
 
-/* zobrayuje kdo je na tahu... HRAJE: o || x */
+@keyframes zoom {
+  0% {
+    transform: scale(0);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* zobrazuje kdo je na tahu... HRAJE: o || x */
 .board__nav--circle {
   background-image: url('../svg/circle.svg');
 }

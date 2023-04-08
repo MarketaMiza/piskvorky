@@ -1,6 +1,5 @@
 let currentPlayer = 'circle';
 
-
 const btnElm1 = document.querySelector('td:nth-child(1)');
 const btnElm2 = document.querySelector('td:nth-child(2)');
 const btnElm3 = document.querySelector('td:nth-child(3)');
@@ -12,18 +11,18 @@ const btnElm8 = document.querySelector('td:nth-child(8)');
 const btnElm9 = document.querySelector('td:nth-child(9)');
 const btnElm10 = document.querySelector('td:nth-child(10)');
 
-const hrac = document.querySelector('.hrac')
+const player = document.querySelector('#player')
 const change = (event) => {
 
     if(currentPlayer === 'circle') {
         event.target.classList.add('board__field--circle')
         currentPlayer = 'cross'
-        hrac.className = 'board__nav--circle'
+        player.className = 'board__nav--circle'
 
     } else if (currentPlayer === 'cross') {
         event.target.classList.add('board__field--cross') 
         currentPlayer = 'circle'
-        hrac.className = 'board__nav--cross'
+        player.className = 'board__nav--cross'
     }
     event.target.disabled = true;
 
@@ -40,3 +39,9 @@ btnElm8.addEventListener('click', change)
 btnElm9.addEventListener('click', change)
 btnElm10.addEventListener('click', change)
 
+const restart = document.querySelector('.blue')
+restart.addEventListener('click', (event) => {
+    if (!confirm('opravdu chces  zacit znovu?')) {
+        event.preventDefault()
+    }
+})
