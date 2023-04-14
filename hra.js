@@ -17,12 +17,12 @@ const change = (event) => {
     if(currentPlayer === 'circle') {
         event.target.classList.add('board__field--circle')
         currentPlayer = 'cross'
-        player.className = 'board__nav--circle'
+        player.className = 'board__nav--cross'
 
     } else if (currentPlayer === 'cross') {
         event.target.classList.add('board__field--cross') 
         currentPlayer = 'circle'
-        player.className = 'board__nav--cross'
+        player.className = 'board__nav--circle'
     }
     event.target.disabled = true;
 
@@ -41,7 +41,7 @@ btnElm10.addEventListener('click', change)
 
 const restart = document.querySelector('.blue')
 restart.addEventListener('click', (event) => {
-    if (!confirm('opravdu chces  zacit znovu?')) {
+    if (!confirm('Opravdu chceš začít znovu?')) {
         event.preventDefault()
     }
 })
