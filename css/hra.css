@@ -109,14 +109,6 @@ td:focus {
   background-image: url("../svg/cross.svg");
 }
 
-.board__field--circle,
-.board__field--cross {
-  background-size: cover;
-  width: 60%;
-  height: 60%;
-  animation: zoom 0.15s;
-}
-
 @keyframes zoom {
   0% {
     transform: scale(0);
@@ -125,6 +117,14 @@ td:focus {
   100% {
     transform: scale(1);
   }
+}
+
+.board__field--circle,
+.board__field--cross {
+  background-size: cover;
+  width: 50%;
+  height: 50%;
+  animation: zoom 0.15s;
 }
 
 /* zobrazuje kdo je na tahu... HRAJE: o || x */

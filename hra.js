@@ -1,47 +1,57 @@
-let currentPlayer = 'circle';
+import { findWinner } from "https://unpkg.com/piskvorky@0.1.4";
 
-const btnElm1 = document.querySelector('td:nth-child(1)');
-const btnElm2 = document.querySelector('td:nth-child(2)');
-const btnElm3 = document.querySelector('td:nth-child(3)');
-const btnElm4 = document.querySelector('td:nth-child(4)');
-const btnElm5 = document.querySelector('td:nth-child(5)');
-const btnElm6 = document.querySelector('td:nth-child(6)');
-const btnElm7 = document.querySelector('td:nth-child(7)');
-const btnElm8 = document.querySelector('td:nth-child(8)');
-const btnElm9 = document.querySelector('td:nth-child(9)');
-const btnElm10 = document.querySelector('td:nth-child(10)');
+// ukol 3
+let currentPlayer = "circle";
+const player = document.querySelector("#player");
 
-const player = document.querySelector('#player')
 const change = (event) => {
+  if (currentPlayer === "circle") {
+    event.target.classList.add("board__field--circle");
+    currentPlayer = "cross";
+    player.className = "board__nav--cross";
+  } else if (currentPlayer === "cross") {
+    event.target.classList.add("board__field--cross");
+    currentPlayer = "circle";
+    player.className = "board__nav--circle";
+  }
+  event.target.disabled = true;
 
-    if(currentPlayer === 'circle') {
-        event.target.classList.add('board__field--circle')
-        currentPlayer = 'cross'
-        player.className = 'board__nav--cross'
+  const buttonsArray = Array.from(buttons);
 
-    } else if (currentPlayer === 'cross') {
-        event.target.classList.add('board__field--cross') 
-        currentPlayer = 'circle'
-        player.className = 'board__nav--circle'
+  let herniPole = buttonsArray.map((element) => {
+    if (element.firstChild.className === "board__field--circle") {
+        return 'o'
+    };
+    if (element.firstChild.className === "board__field--cross") {
+        return 'x'
     }
-    event.target.disabled = true;
 
-}
+    return "_";
+  });
 
-btnElm1.addEventListener('click', change)
-btnElm2.addEventListener('click', change)
-btnElm3.addEventListener('click', change)
-btnElm4.addEventListener('click', change)
-btnElm5.addEventListener('click', change)
-btnElm6.addEventListener('click', change)
-btnElm7.addEventListener('click', change)
-btnElm8.addEventListener('click', change)
-btnElm9.addEventListener('click', change)
-btnElm10.addEventListener('click', change)
+  const vitez = findWinner(herniPole);
+  if (vitez === "o" || vitez === "x") {
+      setTimeout(() => {
+          alert(`Vyhrál hráč se symbolem ${vitez}.`); 
+          location.reload();
 
-const restart = document.querySelector('.blue')
-restart.addEventListener('click', (event) => {
-    if (!confirm('Opravdu chceš začít znovu?')) {
-        event.preventDefault()
-    }
-})
+      }, 500)
+      // toto by se provedlo hned
+  }
+};
+
+// bonus 3
+const restart = document.querySelector(".blue");
+restart.addEventListener("click", (event) => {
+  if (!confirm("Opravdu chceš začít znovu?")) {
+    event.preventDefault();
+  }
+});
+
+// ukol 4
+const buttons = document.querySelectorAll("td");
+buttons.forEach((button) => {
+  button.addEventListener("click", change);
+});
+
+
