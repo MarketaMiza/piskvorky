@@ -1,42 +1,50 @@
 import { findWinner } from "https://unpkg.com/piskvorky@0.1.4";
-
+// to do: prejmenovat change, rozkouskovat funkci
 // ukol 3
-let currentPlayer = "circle";
-const player = document.querySelector("#player");
+let currentPlayer = "circle"; // globalni promnenna bez zanoreni, zije nahore
 
-const change = (event) => {
+const player = document.querySelector("#player"); // vyznacuje policko HRAJE
+
+// doPlayerMove(event)
+const doPlayerMove = (event) => {
+  
   if (currentPlayer === "circle") {
-    event.target.classList.add("board__field--circle");
+   
+    event.target.className = "board__field--circle"; // nastav classu DOM elementu na ktery bylo kliknuto
     currentPlayer = "cross";
     player.className = "board__nav--cross";
+  
   } else if (currentPlayer === "cross") {
-    event.target.classList.add("board__field--cross");
+ 
+    event.target.className = "board__field--cross";
     currentPlayer = "circle";
     player.className = "board__nav--circle";
+  
   }
-  event.target.disabled = true;
 
-  const buttonsArray = Array.from(buttons);
+  const buttonsArray = Array.from(buttons); // list DOM prvku prevedno do Array aby mohl byt uplatnen map
+  
 
-  let herniPole = buttonsArray.map((element) => {
-    if (element.firstChild.className === "board__field--circle") {
+  let playField = buttonsArray.map((element) => { // do map davame call back funkci, ta se zavola pro kazdy ele. vychoziho pole / po kazdem zadani setavuje nove pole
+    
+    if (element.className === "board__field--circle") {
         return 'o'
     };
-    if (element.firstChild.className === "board__field--cross") {
+    if (element.className === "board__field--cross") {
         return 'x'
     }
 
     return "_";
   });
 
-  const vitez = findWinner(herniPole);
-  if (vitez === "o" || vitez === "x") {
+  const winner = findWinner(playField);
+  if (winner === "o" || winner === "x") {
       setTimeout(() => {
-          alert(`Vyhrál hráč se symbolem ${vitez}.`); 
+          alert(`Vyhrál hráč se symbolem ${winner}.`); 
           location.reload();
 
       }, 500)
-      // toto by se provedlo hned
+      
   }
 };
 
@@ -49,9 +57,9 @@ restart.addEventListener("click", (event) => {
 });
 
 // ukol 4
-const buttons = document.querySelectorAll("td");
+const buttons = document.querySelectorAll("button");
 buttons.forEach((button) => {
-  button.addEventListener("click", change);
+  button.addEventListener("click", doPlayerMove, {once:true});
 });
 
 
